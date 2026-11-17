@@ -52,9 +52,28 @@ No wires to the radio, no extra module inside it.
 | SCL | GPIO4 |
 
 The GPS module plugs into the Heltec V4 GNSS connector (RX = GPIO39, 9600 baud). The OLED is on the board.
-Mount the GY-511 on top of the box with its pins at the back (X right, Y away from you, Z up);
-for other orientations change `COMPASS_RIGHT_*` in `compass.h`.
-Keep it away from magnets, speakers and steel screws.
+
+### Compass mounting
+
+<p align="center"><img src="docs/compass_mounting.jpg" alt="GY-511 mounted on top of the case, pins at the back" width="520"></p>
+
+The code is set up for this mounting: the GY-511 lies on **top of the case** with the **pins at the back**,
+above the OLED window. Using the axes printed on the module:
+
+| Module axis | Direction |
+|---|---|
+| **X** | right |
+| **Y** | away from you (the way you are facing) |
+| **Z** | up |
+
+The facing direction is calculated as *up x right*, so the arrow stays correct when the radio is tilted
+forward or back. Only the **right** axis has to be configured: `COMPASS_RIGHT_X/Y/Z` in `compass.h`
+(default `1, 0, 0` = module X axis). If you mount the module differently, set it to the module axis that
+points to your right, e.g. `0, -1, 0` if the module's Y arrow points to your left.
+
+- The module can face up or down; only the right axis matters.
+- Fix it firmly: it must not move relative to the case.
+- Keep it away from magnets, speakers and steel screws, then calibrate with the box mounted on the radio.
 
 ## Enclosure
 
