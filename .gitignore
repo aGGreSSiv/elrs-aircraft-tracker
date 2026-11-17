@@ -5,6 +5,7 @@
 !/README.md
 !/aircraft_tracker/
 !/docs/
+!/enclosure/
 
 # Personal settings (binding phrase, declination)
 /aircraft_tracker/config.h

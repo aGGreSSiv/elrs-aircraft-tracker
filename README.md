@@ -7,6 +7,8 @@ It receives the plane's GPS position wirelessly from the radio's **ExpressLRS TX
 combines it with its own GPS and a tilt-compensated compass, and draws an arrow and the distance on an OLED.
 No wires to the radio, no extra module inside it.
 
+<p align="center"><img src="docs/tracker_photo.jpg" alt="The tracker in its 3D printed case" width="560"></p>
+
 ![How it works](docs/system_flow.png)
 
 ## Features
@@ -25,7 +27,8 @@ No wires to the radio, no extra module inside it.
 | Heltec WiFi LoRa 32 **V4** | ESP32-S3, built-in OLED, GNSS connector |
 | GPS module for the Heltec V4 GNSS connector + GPS antenna | No antenna, no fix |
 | GY-511 (LSM303DLHC) | Compass + accelerometer, I2C (optional, see below) |
-| LiPo battery, 3D printed box | |
+| LiPo battery, LiPo charger board, on/off switch | Fit in the printed case |
+| 3D printed case | STL files in [`enclosure/`](#enclosure) |
 
 ### Radio and plane
 - A radio with an internal **ExpressLRS** TX module and **ELRS Backpack** (we use a Jumper T15)
@@ -52,6 +55,22 @@ The GPS module plugs into the Heltec V4 GNSS connector (RX = GPIO39, 9600 baud).
 Mount the GY-511 on top of the box with its pins at the back (X right, Y away from you, Z up);
 for other orientations change `COMPASS_RIGHT_*` in `compass.h`.
 Keep it away from magnets, speakers and steel screws.
+
+## Enclosure
+
+3D printable case and cover in [`enclosure/`](enclosure):
+
+| File | Part |
+|---|---|
+| `HeltecV4Case.stl` | Case (OLED window on the front, GY-511 seat on top) |
+| `HeltecV4Cover.stl` | Back cover |
+
+| Front | Back | Inside layout |
+|---|---|---|
+| ![Case front](enclosure/case_front.png) | ![Case back](enclosure/case_back.png) | ![Case layout](enclosure/case_layout.png) |
+
+The inside has places for the LiPo charger, the on/off switch, the GPS module and the compass.
+The case mounts on the radio near the antenna.
 
 ## Radio setup
 1. **Plane:** make sure the GPS position shows up on your radio's telemetry screen
