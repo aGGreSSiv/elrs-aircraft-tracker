@@ -1,0 +1,10 @@
+# Only the tracker is published. Everything else in this folder (test sketches,
+# firmware backups, video project) stays local.
+/*
+!/.gitignore
+!/README.md
+!/aircraft_tracker/
+!/docs/
+
+# Personal settings (binding phrase, declination)
+/aircraft_tracker/config.h
