@@ -144,6 +144,10 @@ A status line is printed every second, including ESP-NOW packet counters, which 
 
 Details are in `aircraft_tracker/elrs_link.h`.
 
+## License
+
+[MIT](LICENSE): code, 3D models and documentation.
+
 ## Credits
 - ESP-NOW protocol details from the [ExpressLRS Backpack](https://github.com/ExpressLRS/Backpack) source.
 - Heltec V4 GNSS power/reset pin mapping from [Meshtastic](https://github.com/meshtastic/firmware).
